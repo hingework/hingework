@@ -1,0 +1,7 @@
+# Environment references only. Configuration adoption requires explicit review/apply.
+ollama_base_url: {env: LOCAL_AGENT_HUB_OLLAMA_BASE_URL}
+ollama_timeout_s: {env: LOCAL_AGENT_HUB_OLLAMA_TIMEOUT_S}
+codex_timeout_s: {env: LOCAL_AGENT_HUB_CODEX_TIMEOUT_S}
+claude_timeout_s: {env: LOCAL_AGENT_HUB_CLAUDE_TIMEOUT_S}
+codex_command: {env: LOCAL_AGENT_HUB_CODEX_COMMAND}
+claude_command: {env: LOCAL_AGENT_HUB_CLAUDE_COMMAND}
