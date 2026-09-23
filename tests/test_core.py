@@ -6,8 +6,8 @@ from unittest.mock import Mock, patch
 
 import requests
 
-from shared_ai_execution import ClaudeAdapter, CodexAdapter, OllamaAdapter, PacketError, validate_packet
-from shared_ai_execution.evidence.packets import MAX_PACKET_BYTES
+from hingework import ClaudeAdapter, CodexAdapter, OllamaAdapter, PacketError, validate_packet
+from hingework.evidence.packets import MAX_PACKET_BYTES
 
 
 def packet():
@@ -17,7 +17,7 @@ def packet():
 class CoreTests(unittest.TestCase):
     @unittest.skipUnless(os.name == "nt", "Windows command processor contract")
     def test_windows_command_script_uses_literal_fixed_command_line(self):
-        with patch("shared_ai_execution.adapters.providers.subprocess.run") as run:
+        with patch("hingework.adapters.providers.subprocess.run") as run:
             run.return_value = subprocess.CompletedProcess([], 0, '{"result":"synthetic"}', "")
             p = packet(); p["question"] = "literal & % task"
             r = ClaudeAdapter("sample tool.cmd", 2).invoke(p)
@@ -43,7 +43,7 @@ class CoreTests(unittest.TestCase):
             validate_packet(p)
 
     def test_ollama_local_transport_and_raw_preservation(self):
-        with patch("shared_ai_execution.adapters.providers.requests.Session") as factory:
+        with patch("hingework.adapters.providers.requests.Session") as factory:
             session = factory.return_value.__enter__.return_value
             session.post.return_value = Mock(status_code=200)
             session.post.return_value.json.return_value = {"done": True, "response": "  λ\r\n"}
@@ -61,7 +61,7 @@ class CoreTests(unittest.TestCase):
                  ({"done": False, "response": "partial"}, None, "incomplete_response"),
                  ({"done": True, "response": " "}, None, "empty_output")]
         for data, exception, error in cases:
-            with self.subTest(error=error), patch("shared_ai_execution.adapters.providers.requests.Session") as factory:
+            with self.subTest(error=error), patch("hingework.adapters.providers.requests.Session") as factory:
                 session = factory.return_value.__enter__.return_value
                 session.post.side_effect = exception
                 session.post.return_value = Mock(status_code=200)
@@ -75,7 +75,7 @@ class CoreTests(unittest.TestCase):
         cases = [(CodexAdapter, json.dumps({"type": "item.completed", "item": {"type": "agent_message", "text": raw}})),
                  (ClaudeAdapter, json.dumps({"result": raw}))]
         for kind, stdout in cases:
-            with self.subTest(kind=kind), patch("shared_ai_execution.adapters.providers.subprocess.run") as run:
+            with self.subTest(kind=kind), patch("hingework.adapters.providers.subprocess.run") as run:
                 run.return_value = subprocess.CompletedProcess([], 0, stdout, "")
                 p = packet(); p["question"] = "literal & % text"
                 r = kind("sample-cli", 2).invoke(p)
@@ -90,13 +90,13 @@ class CoreTests(unittest.TestCase):
                  (CodexAdapter, '{"type":"item.completed","item":{"type":"agent_message","text":42}}'),
                  (ClaudeAdapter, '{"result":42}'), (ClaudeAdapter, "not json")]
         for kind, stdout in cases:
-            with self.subTest(stdout=stdout), patch("shared_ai_execution.adapters.providers.subprocess.run") as run:
+            with self.subTest(stdout=stdout), patch("hingework.adapters.providers.subprocess.run") as run:
                 run.return_value = subprocess.CompletedProcess([], 0, stdout, "")
                 self.assertEqual(kind("sample-cli", 2).invoke(packet()).error, "malformed_output")
         for kind in (CodexAdapter, ClaudeAdapter):
-            with patch("shared_ai_execution.adapters.providers.subprocess.run", side_effect=subprocess.TimeoutExpired("sample", 2)):
+            with patch("hingework.adapters.providers.subprocess.run", side_effect=subprocess.TimeoutExpired("sample", 2)):
                 self.assertEqual(kind("sample-cli", 2).invoke(packet()).error, "timeout")
-            with patch("shared_ai_execution.adapters.providers.subprocess.run") as run:
+            with patch("hingework.adapters.providers.subprocess.run") as run:
                 p = packet(); p["evidence"] = {}
                 self.assertEqual(kind("sample-cli", 2).invoke(p).error, "invalid_packet")
                 run.assert_not_called()

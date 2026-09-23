@@ -28,6 +28,8 @@ Templates contain no credentials, endpoints, executable locations or model defau
 
 ## Reporting a vulnerability
 
-This local, unpublished repository has no configured public reporting endpoint. Before publication, the maintainer must enable and verify a private vulnerability-reporting channel on the chosen host and update this section with its route. Do not infer that a reporting feature is enabled merely because a repository is publicly visible.
+The intended reporting route is GitHub Private Vulnerability Reporting. It is not enabled for this local, unpublished repository. The maintainer will enable it as part of the separately authorized publication step itself, after the GitHub repository exists, and verify the private report form and maintainer notifications. This is a publication-day action, not a prerequisite to creating the repository.
+
+Once enabled, use the published repository's Security tab, then Advisories, then Report a vulnerability. Until the private form is verified, treat this route as pending. Do not infer that it is enabled merely because a repository is publicly visible.
 
 Do not post credentials, exploit details or sensitive records in public issues. If a private route is unavailable, request a private contact method without disclosing those details. No security-response time or supported-version commitment is currently promised.

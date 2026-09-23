@@ -1,5 +1,6 @@
 include .env.example
-include README.md LICENSE SECURITY.md
+include README.md README_ADHD.md LICENSE SECURITY.md
 include config/config.example.yaml
-include docs/DECISIONS.md docs/PROVENANCE.md docs/EXTRACTION.md docs/WORKLOG.md
+include docs/BRAND.md docs/DECISIONS.md docs/PROVENANCE.md docs/EXTRACTION.md docs/WORKLOG.md
 recursive-include examples *.py
+recursive-include assets *.svg

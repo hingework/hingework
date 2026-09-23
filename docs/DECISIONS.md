@@ -40,6 +40,18 @@ Explicit setuptools mapping preserves the `shared_ai_execution` import namespace
 
 Raw adapter text is preserved as UTF-8 bytes; this does not claim preservation of original network bytes. Runtime records are excluded from distribution.
 
+### D004 amendment — Public/package identity rename — 2026-09-23
+
+**PROVEN — owner-directed rename:** the distribution name changes from `local-agent-hub` (normalized artifact prefix `local_agent_hub`) to `hingework`, and the import namespace changes from `shared_ai_execution` to `hingework`. The physical `src/` layout and explicit setuptools mapping remain. This dated amendment adds the requested rename decision to the existing D004; it does not erase or renumber the original configuration decision.
+
+**PROVEN — clean break:** no deprecated import alias or compatibility shim is shipped. This is a pre-publication rename with no existing external users, as stated by the owner. Examples, test imports/mock targets, template environment names (`LOCAL_AGENT_HUB_*` to `HINGEWORK_*`), and temporary/probe naming follow the new identity. No external configuration is automatically migrated. API signatures, validation/routing rules, dependencies, and the version are unchanged.
+
+**PROVEN — provenance continuity:** the provenance clearance already established for config, packets, providers, council, records, and the escalation/validation components applies unchanged to their renamed forms. This is a rename of the same code, not new implementation requiring provenance re-review. The original attestation, component revisions and ownership disposition in PROVENANCE.md remain verbatim. Existing copyright attribution is retained. The historical public commits `7f457cf` and `8bf5210` are not rewritten.
+
+**SUPERSEDED — namespace only:** D004's earlier `shared_ai_execution` naming statement and EXTRACTION.md's original packaging description describe the pre-rename snapshot. Only those naming choices are superseded; their technical/provenance findings and publication gates still apply.
+
+**NOT TESTED — registration acceptance:** the fresh PyPI lookup is recorded in WORKLOG.md. A public 404 is evidence of no visible project, not a reservation or a guarantee that an eventual upload will be accepted. No registration or publication is authorized here.
+
 ## D005 — Integration boundaries
 
 Custom adapters and deterministic validators are explicitly supplied trusted application code. The coordinator limits its own adapter invocations to three; it cannot sandbox arbitrary extension code or limit work that an external provider performs internally. Default citation validation proves exact supplied-source matches, not semantic correctness. Source labels never trigger file reads.

@@ -1,6 +1,6 @@
 """Explicit single-provider request; never invoked by import or installation."""
 import argparse
-from shared_ai_execution import ClaudeAdapter, CodexAdapter, OllamaAdapter, load_execution_config
+from hingework import ClaudeAdapter, CodexAdapter, OllamaAdapter, load_execution_config
 
 
 def main():

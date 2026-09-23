@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from shared_ai_execution import AdapterResult, ExecutionConfig, ModelSpec, RecordStore, RecordStoreError, run_local_council
+from hingework import AdapterResult, ExecutionConfig, ModelSpec, RecordStore, RecordStoreError, run_local_council
 
 
 class RecordsTests(unittest.TestCase):

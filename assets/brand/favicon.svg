@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-labelledby="title desc">
+  <title id="title">Hingework — Split Bridge</title>
+  <desc id="desc">Small-scale Hinge H: rounded uprights, a circular hinge and an enlarged center pin. A fixed dark tile preserves contrast in both themes.</desc>
+  <rect width="32" height="32" rx="4" fill="#0d1117"/>
+  <path fill="#f0f6fc" fill-rule="evenodd" transform="translate(1 1)" d="M5.5 4H9.5Q11 4 11 5.5V13H11.6916A5.25 5.25 0 0 1 20.3084 13H21V5.5Q21 4 22.5 4H26.5Q28 4 28 5.5V26.5Q28 28 26.5 28H22.5Q21 28 21 26.5V19H20.3084A5.25 5.25 0 0 1 11.6916 19H11V26.5Q11 28 9.5 28H5.5Q4 28 4 26.5V5.5Q4 4 5.5 4ZM19 16a3 3 0 1 0 -6 0a3 3 0 1 0 6 0ZM17.5 16a1.5 1.5 0 1 0 -3 0a1.5 1.5 0 1 0 3 0Z"/>
+</svg>

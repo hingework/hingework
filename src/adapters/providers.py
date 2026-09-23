@@ -101,7 +101,7 @@ class _CliAdapter:
             processor = subprocess.list2cmdline([os.environ.get("COMSPEC", "cmd.exe")])
             args = processor + ' /d /v:off /s /c "' + subprocess.list2cmdline(args) + '"'
         try:
-            with tempfile.TemporaryDirectory(prefix="agent-hub-") as scratch:
+            with tempfile.TemporaryDirectory(prefix="hingework-") as scratch:
                 return subprocess.run(args, input=prompt, text=True, encoding="utf-8", errors="replace",
                                       cwd=scratch, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                       timeout=self.timeout_s, check=False, shell=False), None

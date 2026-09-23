@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from shared_ai_execution import AdapterResult, ModelSpec, load_execution_config, run_local_council, run_escalating_task
+from hingework import AdapterResult, ModelSpec, load_execution_config, run_local_council, run_escalating_task
 
 
 class CleanConfigTests(unittest.TestCase):

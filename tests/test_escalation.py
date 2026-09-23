@@ -7,9 +7,9 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from shared_ai_execution import AdapterResult, EvidenceVerdict, run_escalating_task, validate_citations
-from shared_ai_execution.debate.records import RecordStore
-from shared_ai_execution.evidence.packets import MAX_PACKET_BYTES, packet_hash, validate_packet
+from hingework import AdapterResult, EvidenceVerdict, run_escalating_task, validate_citations
+from hingework.debate.records import RecordStore
+from hingework.evidence.packets import MAX_PACKET_BYTES, packet_hash, validate_packet
 from test_evidence_validation import BAD, GOOD, citation_packet
 
 

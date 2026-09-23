@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from shared_ai_execution import ExecutionConfig, ProviderConfigError, load_execution_config
-from shared_ai_execution.orchestration.config import executable, local_url
+from hingework import ExecutionConfig, ProviderConfigError, load_execution_config
+from hingework.orchestration.config import executable, local_url
 
 
 class ConfigTests(unittest.TestCase):

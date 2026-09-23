@@ -1,6 +1,6 @@
 """Offline evidence-driven escalation using two synthetic adapters."""
 from tempfile import TemporaryDirectory
-from shared_ai_execution import AdapterResult, run_escalating_task
+from hingework import AdapterResult, run_escalating_task
 
 
 class FakeAdapter:

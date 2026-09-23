@@ -67,3 +67,9 @@ Include only what is necessary to understand, run, test or extend the general me
 - **SUPERSEDED — audit encoding:** the private history scanner initially decoded its exact-text exception source with the platform default encoding. Explicit UTF-8 restored exact matching and the full scan passed; no repository text or exception scope was broadened.
 - **PROVEN — technical closeout:** the reviewed 34-file standalone scope is READY_TO_PUBLISH in the technical sense: implementation, documentation, license, synthetic/clean-config checks and fresh-history privacy checks are complete. This status does not grant publication authority or resolve contracts.
 - **BLOCKED — publication:** employment/contract review and manual owner authorization remain required. A verified private vulnerability-reporting route must also be configured on the chosen host before public release; no endpoint is invented for this local-only repository.
+
+## Identity annotation — 2026-09-23
+
+**SUPERSEDED — package/import names only:** this closeout describes the original `local-agent-hub` distribution and `shared_ai_execution` namespace at public commits `7f457cf` and `8bf5210`. The later D004 rename amendment changes both public names to `hingework`; normalized distribution artifacts change from `local_agent_hub` to `hingework`. The original text above remains a historical record rather than being silently renamed.
+
+**PROVEN — continuous provenance:** the five cleared modules and cleared escalation/validation components are the same implementations under the new package mapping. Their established provenance dispositions and the separate publication gates remain unchanged. PROVENANCE.md and its owner attestation are preserved verbatim; the original copyright attribution is retained. See the D004 amendment in [DECISIONS.md](DECISIONS.md) and current rename verification in [WORKLOG.md](WORKLOG.md).

@@ -1,6 +1,6 @@
 """Offline sequential example. Run after explicitly installing the package."""
 from tempfile import TemporaryDirectory
-from shared_ai_execution import AdapterResult, ExecutionConfig, ModelSpec, run_local_council
+from hingework import AdapterResult, ExecutionConfig, ModelSpec, run_local_council
 
 
 class FakeAdapter:

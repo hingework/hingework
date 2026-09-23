@@ -1,8 +1,8 @@
 from copy import deepcopy
 import unittest
 
-from shared_ai_execution import EvidenceVerdict, PacketError, validate_citations
-from shared_ai_execution.evidence.packets import validate_citation_packet
+from hingework import EvidenceVerdict, PacketError, validate_citations
+from hingework.evidence.packets import validate_citation_packet
 
 
 def citation_packet():

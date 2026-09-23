@@ -34,7 +34,7 @@ class AdoptionSafetyTests(unittest.TestCase):
                  patch("subprocess.run", side_effect=AssertionError("unexpected process")), \
                  patch("requests.sessions.Session.request", side_effect=AssertionError("unexpected HTTP")):
                 environment = dict(os.environ)
-                spec = importlib.util.spec_from_file_location("hub_import_probe", repository / "src/__init__.py",
+                spec = importlib.util.spec_from_file_location("hingework_import_probe", repository / "src/__init__.py",
                                                               submodule_search_locations=[str(repository / "src")])
                 module = importlib.util.module_from_spec(spec)
                 sys.modules[spec.name] = module
@@ -45,7 +45,7 @@ class AdoptionSafetyTests(unittest.TestCase):
                         runpy.run_path(str(example))
                 finally:
                     for name in list(sys.modules):
-                        if name == "hub_import_probe" or name.startswith("hub_import_probe."):
+                        if name == "hingework_import_probe" or name.startswith("hingework_import_probe."):
                             del sys.modules[name]
                 self.assertEqual(dict(os.environ), environment)
             self.assertEqual({p.name: p.read_bytes() for p in home.iterdir()}, before)
