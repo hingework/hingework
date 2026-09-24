@@ -28,12 +28,10 @@ Templates contain no credentials, endpoints, executable locations or model defau
 
 ## Reporting a vulnerability
 
-The intended reporting route is GitHub Private Vulnerability Reporting.
+GitHub Private Vulnerability Reporting is enabled for Hingework.
 
-Hingework is now publicly hosted on GitHub. Private Vulnerability Reporting is being verified as part of the publication process. Until the private report form and maintainer notifications are confirmed, treat the route as pending.
+Use the repository's **Security** tab, then **Advisories**, then **Report a vulnerability** to submit a report privately.
 
-GitHub Private Vulnerability Reporting is enabled. Use the repository's **Security** tab, then **Advisories**, then **Report a vulnerability**.
-
-Do not post credentials, exploit details, or sensitive records in public issues. If a private route is unavailable, request a private contact method without disclosing those details.
+Do not post credentials, exploit details, or sensitive records in public issues. If the private reporting route is temporarily unavailable, request a private contact method without disclosing those details publicly.
 
 No security-response time or supported-version commitment is currently promised.
