@@ -32,7 +32,7 @@ The intended reporting route is GitHub Private Vulnerability Reporting.
 
 Hingework is now publicly hosted on GitHub. Private Vulnerability Reporting is being verified as part of the publication process. Until the private report form and maintainer notifications are confirmed, treat the route as pending.
 
-Once verified, use the repository's **Security** tab, then **Advisories**, then **Report a vulnerability**.
+GitHub Private Vulnerability Reporting is enabled. Use the repository's **Security** tab, then **Advisories**, then **Report a vulnerability**.
 
 Do not post credentials, exploit details, or sensitive records in public issues. If a private route is unavailable, request a private contact method without disclosing those details.
 
